@@ -1,3 +1,7 @@
+"""
+" Get the selected dict of topK IPs and its count
+" By Zhengping on 2018-08-09
+"""
 import os
 from src.util.FileReader import fileReader
 from src.util.DNSFieldLocMap import FieldToLoc

@@ -1,7 +1,7 @@
 """
 " Get the total traffic volume of each hour in record files.
 " Receive two hourly CONN files as input.
-" By Zhengping on 2018-08-08
+" By Zhengping on 2018-08-09
 """
 
 from src.util.FileReader import fileReader
