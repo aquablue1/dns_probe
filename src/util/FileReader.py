@@ -28,6 +28,7 @@ class fileReader():
         """
         nextLine = self.file.readline()
         while nextLine != "" and nextLine[0] == "#":
+            # only for skipping those begin with "#"
             nextLine = self.file.readline()
         if nextLine == "":
             # print("Reach the end of current line - %s" % self.filename)
@@ -71,13 +72,54 @@ class batchFileReader():
         return nextLine.strip()
 
 
-if __name__ == '__main__':
-    filename = "../../data/Conn_WeeklySummary_2018-03.log"
-    # newFile = fileReader(filename)
+class fileReaderWithMatch():
+    def __init__(self, filename, targetField, MatchedCookie, splitter="\t",):
+        self.filename = filename
+        # self.hasNext = True
+        self.splitter = splitter
+        self.targetField = targetField
+        self.cookie = MatchedCookie
 
+    def __iter__(self):
+        try:
+            self.file = open(self.filename, 'r')
+        except FileNotFoundError:
+            print("Filename %d not found in file system." % self.filename)
+        return self
+
+    def __next__(self):
+        """
+        read file line by line. skip the lines beginning with "#" since they are comments
+        :return: None if reaches the end of line, else return string of line.
+        """
+        nextLine = self.file.readline()
+        while (nextLine != "" and nextLine[0] == "#") or (nextLine != "" and not self.isSatisfied(nextLine)):
+            nextLine = self.file.readline()
+        if nextLine == "":
+            # print("Reach the end of current line - %s" % self.filename)
+            # self.hasNext = False
+            raise StopIteration
+        else:
+            return nextLine.strip()
+
+    def isSatisfied(self, nextLine):
+        if self.cookie == nextLine.split(self.splitter)[self.targetField]:
+            return True
+        else:
+            return False
+
+if __name__ == '__main__':
+    filename = "../../data/sampleFileDNS.log"
+    newFile = fileReader(filename)
+    # for line in newFile:
+        # print(line)
 
     foldername = "../../data/"
-    cookie = "sample"
-    batchFile = batchFileReader(foldername, cookie)
-    for line in batchFile:
+    cookie = "Week"
+    # batchFile = batchFileReader(foldername, cookie)
+    # for line in batchFile:
+        # print(line)
+
+    selectedFile = fileReaderWithMatch(filename, 2, "45.32.1.109")
+    for line in selectedFile:
         print(line)

@@ -31,14 +31,14 @@ def doTopKIPCount(filename, fieldName, k):
     :param k: the K of top specified
     :return: topK as a dict
     """
-    topKDict = {}
     nameCounter = doIPOccuranceCount(filename, fieldName)
-    for key in sorted(nameCounter, key=lambda k: nameCounter[k], reverse=True):
-        if k <= 0:
-            break
-        k -= 1
-        topKDict[key] = nameCounter[key]
-    return topKDict
+    # topKDict = {}
+    # for key in sorted(nameCounter, key=lambda k: nameCounter[k], reverse=True):
+        # if k <= 0:
+            # break
+        # k -= 1
+        # topKDict[key] = nameCounter[key]
+    return nameCounter.most_common(k)
 
 
 def getTopKNameCount(inComing=None, outGoing=None, k=0):
@@ -63,4 +63,4 @@ def getTopKNameCount(inComing=None, outGoing=None, k=0):
 
 if __name__ == '__main__':
     sampleFile = "../../data/sampleFileDNS.log"
-    print(getTopKNameCount(sampleFile, sampleFile, 100))
+    print(getTopKNameCount(sampleFile, sampleFile, 2))

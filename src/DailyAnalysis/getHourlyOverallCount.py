@@ -10,7 +10,6 @@ from src.util.FileLineCounter import lineCount
 def getHourlyOverallCount(inComing=None, outGoing=None):
     inCount = -1
     outCount = -1
-    sumCount = -1
     if inComing is not None:
         inCount = lineCount(inComing)
     else:
@@ -25,8 +24,7 @@ def getHourlyOverallCount(inComing=None, outGoing=None):
 
 
 def getHourlyOverallCount_AsString(hour, inComing=None, outGoing=None):
-    sumCount, inCount, outCount = \
-        getHourlyOverallCount(inComing, outGoing)
+    sumCount, inCount, outCount = getHourlyOverallCount(inComing, outGoing)
 
     return "%02d\t%s\t%s\t%s\n" % (hour, sumCount, inCount, outCount)
 
