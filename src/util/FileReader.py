@@ -18,7 +18,7 @@ class fileReader():
         try:
             self.file = open(self.filename, 'r')
         except FileNotFoundError:
-            print("Filename %d not found in file system." % self.filename)
+            print("Filename %s not found in file system." % self.filename)
         return self
 
     def __next__(self):
