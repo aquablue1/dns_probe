@@ -25,7 +25,7 @@ class dailyNameCount():
 
         outputF.writeString(srcCountStr)
 
-    def __doHourlyNameCount(self, foldername):
+    def __doHourlyNameCount(self, foldername, ):
         files = batchFileReader(foldername, cookie=self.date)
         srcCounter = Counter()
         for line in files:

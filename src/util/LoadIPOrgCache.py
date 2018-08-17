@@ -6,13 +6,13 @@
 from src.util.FileReader import fileReader
 
 
-
 def getCache(filename):
     file = fileReader(filename)
     ipOrgDict = {}
     for line in file:
-        [ip, org] = line.split("\t")
-        ipOrgDict[ip] = org
+        if len(line.split("\t")) > 1:
+            [ip, org] = line.split("\t")
+            ipOrgDict[ip] = org
     return ipOrgDict
 
 

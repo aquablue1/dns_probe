@@ -20,7 +20,7 @@ def getSrcIPList(filename):
     ipList = []
     for line in file:
         queryCount = int(line.split("\t")[1])
-        if queryCount > 50:
+        if queryCount <= 50:
             ipList.append(line.split("\t")[0])
 
     return ipList
@@ -38,7 +38,7 @@ def dumpOrgDict(orgDict, outputFilename):
 if __name__ == '__main__':
     date = "2018-03-07"
     filename = "../../result/ToCPSCAnalysis/srcCounter_%s.log" % date
-    outputFilename = "../../result/ToCPSCAnalysis/srcIPOrg_%s.log" % date
+    outputFilename = "../../result/ToCPSCAnalysis/srcIPOrg_%s_lessPop.log" % date
     srcOrgDict = getOrgDict(getSrcIPList(filename))
     print(srcOrgDict)
     print(dumpOrgDict(srcOrgDict, outputFilename))
