@@ -10,8 +10,8 @@ from src.util.FileReader import fileReader
 from src.util.FileWriter import fileWriter
 
 
-def getOrgDict(ipList):
-    cachedIPOrg = "../../result/ToCPSCAnalysis/srcIPOrg_2018-03-07.log"
+def getOrgDict(ipList, date):
+    cachedIPOrg = "../../result/ToCPSCAnalysis/srcIPOrg_%s.log" % date
     return ipListToOrg(ipList, getCache(cachedIPOrg))
 
 
@@ -20,7 +20,7 @@ def getSrcIPList(filename):
     ipList = []
     for line in file:
         queryCount = int(line.split("\t")[1])
-        if queryCount <= 50:
+        if queryCount > 0:
             ipList.append(line.split("\t")[0])
 
     return ipList
@@ -37,8 +37,8 @@ def dumpOrgDict(orgDict, outputFilename):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    filename = "../../result/ToCPSCAnalysis/srcCounter_%s.log" % date
-    outputFilename = "../../result/ToCPSCAnalysis/srcIPOrg_%s_lessPop.log" % date
-    srcOrgDict = getOrgDict(getSrcIPList(filename))
+    filename = "../../result/ToCPSCAnalysis/ReverseAnalysis/reverseDNSToRow_NS1_%s_srcIPCounter.log" % date
+    outputFilename = "../../result/ToCPSCAnalysis/ReverseAnalysis/srcIPOrg_%s_.log" % date
+    srcOrgDict = getOrgDict(getSrcIPList(filename), date)
     print(srcOrgDict)
     print(dumpOrgDict(srcOrgDict, outputFilename))

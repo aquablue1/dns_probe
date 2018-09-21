@@ -24,7 +24,7 @@ def getDailyNameCount(date, foldername):
 
 
 if __name__ == '__main__':
-    date = "2018-03-07"
+    date = "2018-08-13"
     foldername = "../../result/ToCPSCAnalysis/"
     getDailySrcCount(date, foldername)
     getDailyDstCount(date, foldername)

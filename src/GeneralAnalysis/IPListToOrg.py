@@ -17,9 +17,11 @@ def ipListToOrg(ipList, cachedSet=None):
         # If the IP already queried before, simply read the cache
         if cachedSet is not None and ip in cachedSet:
             orgDict[ip] = cachedSet[ip]
+            print("hit!")
         else:
             orgDict[ip] = getOrg(ip)
-            sleep(0.5)
+            print("%s\t%s\n" % (ip, orgDict[ip]))
+            # sleep(0.5)
     return orgDict
 
 

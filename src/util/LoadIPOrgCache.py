@@ -4,15 +4,18 @@
 """
 
 from src.util.FileReader import fileReader
-
+from src.util.IsFileExist import isFileExist
 
 def getCache(filename):
+    if not isFileExist(filename):
+        return None
     file = fileReader(filename)
     ipOrgDict = {}
     for line in file:
         if len(line.split("\t")) > 1:
             [ip, org] = line.split("\t")
             ipOrgDict[ip] = org
+    print(ipOrgDict)
     return ipOrgDict
 
 

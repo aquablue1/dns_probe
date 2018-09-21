@@ -11,7 +11,8 @@ import json
 
 
 def getOrg(ip):
-    api = "http://ip-api.com/json/%s" % ip
+    api = "http://extreme-ip-lookup.com/json/%s" % ip
+    # api = "http://ip-api.com/json/%s" % ip
     try:
         result = urllib.request.urlopen(api).read()
         result = json.loads(result)

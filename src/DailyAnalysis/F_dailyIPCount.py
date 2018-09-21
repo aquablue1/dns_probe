@@ -28,7 +28,7 @@ def getDailyIPCount(date):
 
 
 if __name__ == '__main__':
-    date = "2018-03-07"
+    date = "2018-09-09"
     outputFilename = "../../result/dailyIPCount_%s.log" % date
     outputF = open(outputFilename, 'a')
     outputF.write(getDailyIPCount(date))

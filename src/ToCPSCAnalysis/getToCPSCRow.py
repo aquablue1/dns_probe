@@ -28,7 +28,7 @@ def getDailyCPSCRow(foldername, cpscFoldername):
         print("Done - %s" % filename)
 
 if __name__ == '__main__':
-    date = "2018-03-07"
+    date = "2018-08-13"
     foldername = "../../data/%s/inbound/" % date
     cpscFoldername = "../../result/ToCPSCAnalysis/%s/" % date
     getDailyCPSCRow(foldername, cpscFoldername)
