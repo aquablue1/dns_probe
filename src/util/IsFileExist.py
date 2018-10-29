@@ -12,5 +12,5 @@ def isFileExist(filename):
 
 
 if __name__ == '__main__':
-    path = "../../result/ToCPSCAnalysis/"
+    path = "../../result/ToCPSC/"
     print(isFileExist(path))

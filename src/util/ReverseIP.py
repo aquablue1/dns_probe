@@ -12,5 +12,5 @@ def getNormByReverse(reverseIP):
 
 
 if __name__ == '__main__':
-    reverseIP = "196.161.1.1.in-addr.arpa"
+    reverseIP = "4.2.159.136.in-addr.arpa"
     print(getNormByReverse(reverseIP))

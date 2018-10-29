@@ -34,5 +34,5 @@ def getReversePrivateCount(filename):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    filename = "../../result/ToCPSCAnalysis/ReverseAnalysis/reverseDNSToRow_NS2_%s_queryCounter.log" % date
+    filename = "../../result/ToCPSC/ReverseAnalysis/reverseDNSToRow_NS2_%s_queryCounter.log" % date
     print(getReversePrivateCount(filename))

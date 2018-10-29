@@ -1,6 +1,6 @@
 """
 " Draw the scatter of rank of IP/port/name and their corresponding occurrences.
-" This script focuses on the overall count of ToCPSC Traffic.
+" This script focuses on the overall count of ToCampusOne Traffic.
 " By Zhengping on 2018-08-19
 """
 
@@ -26,5 +26,5 @@ def drawSrcIPCounterScatter(filename):
 
 
 if __name__ == '__main__':
-    filename = "../../result/ToCPSCAnalysis/nameCounter_2018-03-07.log"
+    filename = "../../result/ToCampusOne/nameCounter_2018-03-07.log"
     drawSrcIPCounterScatter(filename)

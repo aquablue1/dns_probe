@@ -11,7 +11,7 @@ from src.util.FileWriter import fileWriter
 
 
 def getOrgDict(ipList, date):
-    cachedIPOrg = "../../result/ToCPSCAnalysis/srcIPOrg_%s.log" % date
+    cachedIPOrg = "../../result/ToCPSC/srcIPOrg_%s.log" % date
     return ipListToOrg(ipList, getCache(cachedIPOrg))
 
 
@@ -37,8 +37,8 @@ def dumpOrgDict(orgDict, outputFilename):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    filename = "../../result/ToCPSCAnalysis/ReverseAnalysis/reverseDNSToRow_NS1_%s_srcIPCounter.log" % date
-    outputFilename = "../../result/ToCPSCAnalysis/ReverseAnalysis/srcIPOrg_%s_.log" % date
+    filename = "../../result/ToCPSC/ReverseAnalysis/reverseDNSToRow_NS1_%s_srcIPCounter.log" % date
+    outputFilename = "../../result/ToCPSC/ReverseAnalysis/srcIPOrg_%s_.log" % date
     srcOrgDict = getOrgDict(getSrcIPList(filename), date)
     print(srcOrgDict)
     print(dumpOrgDict(srcOrgDict, outputFilename))

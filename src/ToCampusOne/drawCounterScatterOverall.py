@@ -26,5 +26,5 @@ def drawSrcIPCounterScatter(filename):
 
 
 if __name__ == '__main__':
-    filename = "../../result/ToCampusOneAnalysis/nameCounter_2018-03-07.log"
+    filename = "../../result/ToCampusOne/nameCounter_2018-03-07.log"
     drawSrcIPCounterScatter(filename)

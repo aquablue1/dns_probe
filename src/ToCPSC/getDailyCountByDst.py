@@ -47,7 +47,7 @@ def getDailySrcPortCountByDst(date, foldername):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    foldername = "../../result/ToCPSCAnalysis/"
+    foldername = "../../result/ToCPSC/"
     # getDailySrcCountByDst(date, foldername)
     # getDailyNameCountByDst(date, foldername)
     # getDailySrcPortCountByDst(date, foldername)

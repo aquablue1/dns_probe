@@ -9,6 +9,7 @@ from src.util.FolderReader import folderReader
 from src.util.FileReader import fileReader
 from src.util.FileWriter import batchFileWriter
 from src.util.DNSFieldLocMap import FieldToLoc
+import os
 
 
 def doHourlyCPSCRelatedGen(inputFilename):
@@ -34,8 +35,9 @@ def doDailyCPSCRelatedGen(inputFolder, outputFolder):
 
 
 if __name__ == '__main__':
-    date = "2018-03-07"
+    date = "2018-07-01"
     inputFolder = "../../data/%s/inbound" % date
     outputFolder = "../../result/CPSCRow/%s/" % date
-
+    if not os.path.exists(outputFolder):
+        os.makedirs(outputFolder)
     doDailyCPSCRelatedGen(inputFolder, outputFolder)

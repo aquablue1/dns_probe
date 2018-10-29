@@ -50,9 +50,14 @@ if __name__ == '__main__':
                 "2018-07-11", "2018-07-18", "2018-07-25", "2018-08-01",
                 "2018-08-08"]
     dateList = ["2018-06-13"]
+    dateList = ["2018-05-23", "2018-08-15", "2018-08-22", "2018-08-29", "2018-09-05", "2018-09-19"]
+    dateList = ["2018-06-12", "2018-06-14", "2018-06-15", "2018-06-16",
+                "2018-06-17", "2018-06-18", "2018-06-19"]
+    dateList = [ "2018-06-28", "2018-06-29", "2018-06-30", "2018-07-01",
+                "2018-07-02", "2018-07-03"]
     for date in dateList:
         direction = "in"
-        outputFoldername = "../../result/%s/" % date
+        outputFoldername = "../../result/LongPeriodSample/%s/" % date
         if not os.path.exists(outputFoldername):
             os.makedirs(outputFoldername)
         outputSrcFilename = outputFoldername + "/dailySrcIPCount_%s.log" % date

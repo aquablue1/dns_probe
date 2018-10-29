@@ -49,6 +49,6 @@ def getDailyReverseDNSRow(foldername, outputFoldername, date):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    foldername = "../../result/ToCPSCAnalysis/%s/" % date
-    outputFoldername = "../../result/ToCPSCAnalysis/ReverseAnalysis/"
+    foldername = "../../result/ToCPSC/%s/" % date
+    outputFoldername = "../../result/ToCPSC/ReverseAnalysis/"
     getDailyReverseDNSRow(foldername, outputFoldername, date)

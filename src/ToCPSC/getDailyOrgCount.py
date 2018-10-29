@@ -66,9 +66,9 @@ def dumpDailyOrgCount(outputFoldername, ret_str, date):
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    ipCountFilename = "../../result/ToCPSCAnalysis/ReverseAnalysis/reverseDNSToRow_NS1_%s_srcIPCounter.log" % date
+    ipCountFilename = "../../result/ToCPSC/ReverseAnalysis/reverseDNSToRow_NS1_%s_srcIPCounter.log" % date
 
-    orgIPFoldername = "../../result/ToCPSCAnalysis/ReverseAnalysis/"
+    orgIPFoldername = "../../result/ToCPSC/ReverseAnalysis/"
 
     ret_str = getDailyOrgCount_AsString(ipCountFilename, orgIPFoldername, date)
     dumpDailyOrgCount(orgIPFoldername, ret_str, date)

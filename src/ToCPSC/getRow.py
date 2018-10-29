@@ -6,6 +6,7 @@ from src.util.FolderReader import folderReader
 from src.util.FileReader import fileReader
 from src.util.FileWriter import fileWriter
 from src.util.DNSFieldLocMap import FieldToLoc
+import os
 
 
 def getHourlyCPSCRow(filename, cpscFoldername):
@@ -28,7 +29,9 @@ def getDailyCPSCRow(foldername, cpscFoldername):
         print("Done - %s" % filename)
 
 if __name__ == '__main__':
-    date = "2018-08-13"
+    date = "2018-09-13"
     foldername = "../../data/%s/inbound/" % date
-    cpscFoldername = "../../result/ToCPSCAnalysis/%s/" % date
+    cpscFoldername = "../../result/ToCPSC/%s/" % date
+    if not os.path.exists(cpscFoldername):
+        os.makedirs(cpscFoldername)
     getDailyCPSCRow(foldername, cpscFoldername)

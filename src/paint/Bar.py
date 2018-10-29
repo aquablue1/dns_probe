@@ -10,9 +10,7 @@ import matplotlib.pyplot as plt
 
 
 class bar():
-    def __init__(self, xData, yData,):
-        self.xData = xData
-        self.yData = yData
+    def __init__(self):
         self.plt = plt
 
     def setLabel(self, xLabel=None, yLabel=None, fontsize=20):
@@ -34,15 +32,27 @@ class bar():
         elif axis.lower() == "y":
             self.plt.ylim(lim)
 
-    def doPaint(self, label):
-        self.plt.bar(self.xData, self.yData, label=label, color="black")
+    def doPaint(self, xData, yData, label, color="black"):
+        self.plt.bar(xData, yData, label=label, color=color)
+
+    def doshow(self):
         self.plt.legend(loc="best", fontsize=15)
         self.plt.show()
 
 
 if __name__ == '__main__':
-    x = [1,20, 100, 10]
-    y = [1, 200, 30, 400]
-    xy = bar(x, y)
-    xy.setLabel(xLabel="X", yLabel="Y")
-    xy.doPaint("x-y")
+    x = [1,2,3,4,5,6,7]
+    y = [1773309, 484266, 408669, 264095, 178955, 3782650, 970407]
+    y2 = [403257, 116253, 88300, 72487, 140276, 0, 51357]
+    xy = bar()
+    xy.setLabel(xLabel="Target DNS Server", yLabel="Session Count (Million)")
+    xy.doPaint(x, y, "Total Queries")
+    xy.doPaint(x, y2, "Valid Response", color='green')
+    xy.setTicks('y', [500000, 1000000, 1500000, 2000000, 2500_000, 3000_000, 3500_000],
+                ["0.5", "1", "1.5", "2", "2.5", "3", '3.5'])
+    xy.setTicks('x', x, ["CPSC NSes", "CampusOne", "CampusTwo", "CampusNew", "Akamai", "205Unknown", "Others"])
+
+    for i in range(len(x)):
+        xy.plt.text(x[i]-0.15, y[i]+25000, "%.2f%%" % (y2[i]/y[i]))
+
+    xy.doshow()

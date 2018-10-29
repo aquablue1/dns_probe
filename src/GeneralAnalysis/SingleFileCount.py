@@ -35,7 +35,7 @@ class singleFileCount():
 
 if __name__ == '__main__':
     date = "2018-03-07"
-    filename = "../../result/ToCPSCAnalysis/ReverseAnalysis/reverseDNSToRow_NS1_%s.log" % date
+    filename = "../../result/ToCPSC/ReverseAnalysis/reverseDNSToRow_NS1_%s.log" % date
     fcount = singleFileCount(date, filename)
     query_list = ["query", "error", "srcIP", "srcPort"]
     query_list = ["type"]

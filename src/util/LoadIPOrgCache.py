@@ -20,5 +20,5 @@ def getCache(filename):
 
 
 if __name__ == '__main__':
-    filename = "../../result/ToCPSCAnalysis/srcIPOrg_2018-03-07.log"
+    filename = "../../result/ToCPSC/srcIPOrg_2018-03-07.log"
     print(getCache(filename))
