@@ -8,11 +8,8 @@
 import matplotlib.pyplot as plt
 
 
-
 class plot():
-    def __init__(self, xData, yData,):
-        self.xData = xData
-        self.yData = yData
+    def __init__(self):
         self.plt = plt
 
     def setLabel(self, xLabel=None, yLabel=None, fontsize=20):
@@ -34,15 +31,17 @@ class plot():
         elif axis.lower() == "y":
             self.plt.ylim(lim)
 
-    def doPaint(self, label):
-        self.plt.plot(self.xData, self.yData, label=label, color="black", marker="x")
+    def doPaint(self, xData, yData, label):
+        self.plt.plot(xData, yData, label=label, color="black", marker="x")
         self.plt.legend(loc="best", fontsize=15)
+
+    def doShow(self):
         self.plt.show()
 
 
 if __name__ == '__main__':
     x = [1,10, 100, 1000]
     y = [1, 200, 3000, 40000]
-    xy = plot(x, y)
+    xy = plot()
     xy.setLabel(xLabel="X", yLabel="Y")
-    xy.doPaint("x-y")
+    xy.doPaint(x, y, "x-y")

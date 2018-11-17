@@ -33,7 +33,7 @@ if __name__ == '__main__':
     dateList = ["2018-09-09", "2018-09-10", "2018-09-11", "2018-09-12",
                 "2018-09-13", "2018-09-14", "2018-09-15", ]
     dateList = ["2018-06-27", "2018-07-04"]
-    dateList = ["2018-09-19"]
+    dateList = ["2018-09-09"]
     for date in dateList:
         foldername = "../../data/%s/inbound/" % date
         campusOneFoldername = "../../result/ToCampusOne/%s/" % date

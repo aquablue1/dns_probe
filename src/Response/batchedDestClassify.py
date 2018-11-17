@@ -46,6 +46,6 @@ def doBatchedClassify(date, cookieList = None):
             print("Done %s." % cookie)
 
 if __name__ == '__main__':
-    date = "2018-09-09"
+    date = "2018-09-30"
     doBatchedClassify(date)
 

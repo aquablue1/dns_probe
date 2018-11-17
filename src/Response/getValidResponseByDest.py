@@ -47,10 +47,12 @@ def dumpHourlyesponseList(filename, outputFilename):
 if __name__ == '__main__':
     date = "2018-09-11"
     dateList = ["2018-09-11", "2018-09-12", "2018-09-13"]
-    dateList = ["2018-09-13","2018-09-14","2018-09-15"]
+    dateList = ["2018-09-16","2018-09-17","2018-09-18"]
     cookieList = ["205Unknown", "Akamai", "Auroral",
                   "CampusNew", "CampusOne", "CampusTwo",
-                  "CPSC", "Phys", "Other"]
+                  "CPSC",
+                  # "Phys", "Other"
+                 ]
 
     for date in dateList:
         for cookie in cookieList:

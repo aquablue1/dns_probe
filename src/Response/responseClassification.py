@@ -54,7 +54,7 @@ def getDailyAnalysis(date, cookie):
 
 if __name__ == '__main__':
     date = "2018-09-12"
-    cookie = "Other"
+    cookie = "Phys"
     getDailyAnalysis(date, cookie)
 
     foldername = "../../result/To%s/%s" % (cookie, date)

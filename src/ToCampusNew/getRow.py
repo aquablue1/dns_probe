@@ -29,7 +29,7 @@ def getDailyCampusNewRow(foldername, CampusNewFoldername):
         print("Done - %s" % filename)
 
 if __name__ == '__main__':
-    date = "2018-09-12"
+    date = "2018-09-09"
     foldername = "../../data/%s/inbound/" % date
     CampusNewFoldername = "../../result/ToCampusNew/%s/" % date
     if not os.path.exists(CampusNewFoldername):
